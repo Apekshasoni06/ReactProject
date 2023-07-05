@@ -5,6 +5,7 @@ import Data from "./data";
 
 const App = () => {
   const [selectedId, setSelectedId] = useState(3);
+  const selectedItem = Data.find((item) => item.id === selectedId);
 
   const handleItemClick = (id) => {
     setSelectedId(id);
@@ -17,7 +18,7 @@ const App = () => {
         selectedId={selectedId}
         onItemClick={handleItemClick}
       />
-      <RightChild id={selectedId} />
+      <RightChild selectedItem={selectedItem} />
     </div>
   );
 };
